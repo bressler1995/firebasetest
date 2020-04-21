@@ -3,8 +3,10 @@
 let nodeData; // object we will push to firebase
 let fbData; // data we pull from firebase
 let fbDataArray; // firebase data values converted to an array
+let fbCount = 0;
 let database; // reference to our firebase database
 let folderName = "messages"; // name of folder you create in db
+let myinput, mybutton;
 
 function setup() {
   noCanvas();
@@ -43,6 +45,14 @@ function setup() {
   // 2. Click on project
   // 3. On project home page click on name of app under project name (in large font)
   // 4. Click the gear icon --> it's in there!
+  myinput = select('#myinput');
+  mybutton = select('#mybutton');
+  mybutton.mousePressed(
+    function() {
+      fbCount++;
+      createNode(folderName, fbCount, {text: myinput.value()});
+    }
+  );
   
 }
 
