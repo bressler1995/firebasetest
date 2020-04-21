@@ -81,4 +81,5 @@ canvas {
   box-sizing: border-box;
   z-index:2;
   min-width:200px;
+  border-radius: 5px;
 }
