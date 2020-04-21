@@ -9,18 +9,40 @@ let folderName; // name of folder you create in db
 function setup() {
   noCanvas();
 
-  var firebaseConfig = {
+   // Initialize firebase
+  // support for Firebase Realtime Database 4 web here: https://firebase.google.com/docs/database/web/start
+  // Copy and paste your config here (replace object commented out)
+  // ---> directions on finding config below
+
+  // paste your config file here
+  let config = {
     apiKey: "AIzaSyBzXhyxgomkg_5N15f4jLIBwipmkddaw5U",
     authDomain: "fir-test-4bfaa.firebaseapp.com",
     databaseURL: "https://fir-test-4bfaa.firebaseio.com",
     projectId: "fir-test-4bfaa",
     storageBucket: "fir-test-4bfaa.appspot.com",
     messagingSenderId: "166112797619",
-    appId: "1:166112797619:web:01dd09294926c500cce1c6",
-    measurementId: "G-JR8NP0Z4SY"
+    appId: "1:166112797619:web:01dd09294926c500cce1c6"
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+
+  firebase.initializeApp(config);
+
+  database = firebase.database();
+
+  // this references the folder you want your data to appear in
+  let ref = database.ref(folderName);
+  // **** folderName must be consistant across all calls to this folder
+
+  ref.on('value', gotData, errData);
+
+
+  // ---> To find your config object:
+  // They will provide it during Firebase setup
+  // or (if your project already created)
+  // 1. Go to main console page
+  // 2. Click on project
+  // 3. On project home page click on name of app under project name (in large font)
+  // 4. Click the gear icon --> it's in there!
   
 }
 
