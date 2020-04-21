@@ -1,4 +1,4 @@
-https://console.firebase.google.com/project/fir-test-4bfaa/database/fir-test-4bfaa/data
+// https://console.firebase.google.com/project/fir-test-4bfaa/database/fir-test-4bfaa/data
 
 let nodeData; // object we will push to firebase
 let fbData; // data we pull from firebase
