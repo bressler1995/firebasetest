@@ -9,13 +9,15 @@ canvas {
 
 .secret_win {
   display: block;
-  position: relative;
-  background-color: #222;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
   padding:20px;
   max-width: 300px;
   color:#FFF;
-  margin: 30px;
+  top:30px;
+  left:30px;
   border-radius: 3px;
+  z-index: 5;
 }
 
 .secret_options {
@@ -34,6 +36,7 @@ canvas {
   padding:12px !important;
   border-radius: 5px;
   border:0;
+  outline:0;
 }
 
 .secret_options button {
@@ -54,6 +57,11 @@ canvas {
   text-transform: uppercase;
 }
 
+.secret_options button:hover {
+  background-color: #FFF;
+  color:#222;
+}
+
 .secret_win h2 {
   margin:0;
   margin-bottom:7px;
@@ -62,4 +70,13 @@ canvas {
 .secret_win p {
   margin:0;
   margin-bottom:25px;
+}
+
+.temp_p {
+  display:block;
+  color:#FFF;
+  position:fixed;
+  padding:12px;
+  box-sizing: border-box;
+  z-index:2;
 }

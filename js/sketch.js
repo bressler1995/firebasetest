@@ -6,10 +6,10 @@ let fbDataArray; // firebase data values converted to an array
 let fbCount = 0;
 let database; // reference to our firebase database
 let folderName = "messages"; // name of folder you create in db
-let myinput, mybutton;
+let myinput, mybutton, my_x = [], my_y = [], drawn = [];
 
 function setup() {
-  noCanvas();
+  createCanvas(windowWidth, windowHeight);
 
    // Initialize firebase
   // support for Firebase Realtime Database 4 web here: https://firebase.google.com/docs/database/web/start
@@ -51,11 +51,33 @@ function setup() {
     function() {
       fbCount++;
       createNode(folderName, fbCount, {text: myinput.value()});
+      myinput.value('');
     }
   );
   
 }
 
 function draw() {
-  
+  if(fbDataArray != null) {
+
+    fill(0);
+    textSize(14);
+    textFont('Arial');
+    for(let i = 0; i < fbDataArray.length; i++) {
+      if(drawn[i] != true) {
+        drawn[i] = true;
+        let temp_p;
+        //text(fbDataArray[i].text.toString(), my_x[i], my_y[i]);
+        temp_p = createP(fbDataArray[i].text.toString());
+        temp_p.addClass('temp_p');
+        temp_p.style('background: rgb(' + random(0, 230) + ',' + random(0, 230) + ',' + random(0, 230) + ');left:' + my_x[i] + 'px;top:' + my_y[i] + 'px;');
+        //temp_p.position(my_x, my_y);
+      }
+    }
+
+  }
+}
+
+function windowResize() {
+  resizeCanvas(windowWidth, windowHeight);
 }
