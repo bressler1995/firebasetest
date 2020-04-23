@@ -82,7 +82,7 @@ function draw() {
         drawn[i] = true;
         let temp_p;
         //text(fbDataArray[i].text.toString(), my_x[i], my_y[i]);
-        temp_p = createP('<span style="margin-bottom:5px; font-size:12px; font-weight:bold;">' + fbDataArray[i].timestamp.toString() + '</span><span>' + fbDataArray[i].text.toString() + '</span>');
+        temp_p = createP('<span style="margin-bottom:5px; font-size:11px; font-weight:700;">' + fbDataArray[i].timestamp.toString() + '</span><span font-size:15px; font-weight:400>' + fbDataArray[i].text.toString() + '</span>');
         temp_p.addClass('temp_p');
         temp_p.style('background: rgb(' + random(0, 230) + ',' + random(0, 230) + ',' + random(0, 230) + ');left:' + my_x[i] + 'px;top:' + my_y[i] + 'px;');
         //temp_p.position(my_x, my_y);
