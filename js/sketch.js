@@ -49,9 +49,15 @@ function setup() {
   mybutton = select('#mybutton');
   mybutton.mousePressed(
     function() {
-      fbCount++;
-      createNode(folderName, fbCount, {text: myinput.value()});
-      myinput.value('');
+
+      if(myinput.value() != null & myinput.value() != "") {
+        fbCount++;
+        createNode(folderName, fbCount, {text: myinput.value()});
+        myinput.value('');
+      } else {
+        alert("Field can't be blank! Nom nom nom.")
+      }
+      
     }
   );
   
