@@ -15,11 +15,11 @@ function gotData(data) {
     fbCount = fbDataArray.length;
 
     for(let i = 0; i < fbDataArray.length; i++) {
-      my_x.push(round(random(0, windowWidth)));
+      my_x.push(round(random(0, windowWidth - 50)));
     }
 
     for(let i = 0; i < fbDataArray.length; i++) {
-      my_y.push(round(random(0, windowHeight)));
+      my_y.push(round(random(0, windowHeight - 50)));
     }
 
   } else {
