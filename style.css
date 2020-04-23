@@ -75,11 +75,18 @@ canvas {
 
 .temp_p {
   display:block;
-  color:#FFF;
   position:fixed;
   padding:12px;
   box-sizing: border-box;
   z-index:2;
   min-width:200px;
   border-radius: 5px;
+}
+
+.temp_p span {
+  display: block;
+  width:100%;
+  margin:0;
+  padding:0;
+  color:#FFF;
 }

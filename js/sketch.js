@@ -51,8 +51,14 @@ function setup() {
     function() {
 
       if(myinput.value() != null & myinput.value() != "") {
+        let mydate = new Date();
         fbCount++;
-        createNode(folderName, fbCount, {text: myinput.value()});
+        createNode(folderName, fbCount, 
+          {
+            text: myinput.value(),
+            timestamp: String(mydate.getMonth()) + '/' + String(mydate.getDay()) + '/' + String(mydate.getFullYear()),
+          }
+        );
         myinput.value('');
       } else {
         alert("Field can't be blank! Nom nom nom.")
@@ -74,7 +80,7 @@ function draw() {
         drawn[i] = true;
         let temp_p;
         //text(fbDataArray[i].text.toString(), my_x[i], my_y[i]);
-        temp_p = createP(fbDataArray[i].text.toString());
+        temp_p = createP('<span style="margin-bottom:5px; font-size:12px; font-weight:bold;">' + fbDataArray[i].timestamp.toString() + '</span><span>' + fbDataArray[i].text.toString() + '</span>');
         temp_p.addClass('temp_p');
         temp_p.style('background: rgb(' + random(0, 230) + ',' + random(0, 230) + ',' + random(0, 230) + ');left:' + my_x[i] + 'px;top:' + my_y[i] + 'px;');
         //temp_p.position(my_x, my_y);
