@@ -13,12 +13,14 @@ canvas {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
   padding:20px;
-  max-width: 300px;
+  width: calc(100% - 60px);
+  max-width: 360px;
   color:#FFF;
   top:30px;
   left:30px;
   border-radius: 5px;
   z-index: 5;
+  box-sizing: border-box;
 }
 
 .secret_options {
@@ -81,6 +83,24 @@ canvas {
   z-index:2;
   min-width:200px;
   border-radius: 5px;
+  transform-origin: center center;
+  transform: scale(0.9);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.temp_p_transition {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.show_temp_p {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
 
 .temp_p span {

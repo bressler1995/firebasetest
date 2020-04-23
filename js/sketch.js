@@ -75,7 +75,9 @@ function draw() {
     fill(0);
     textSize(14);
     textFont('Arial');
+
     for(let i = 0; i < fbDataArray.length; i++) {
+
       if(drawn[i] != true) {
         drawn[i] = true;
         let temp_p;
@@ -84,6 +86,14 @@ function draw() {
         temp_p.addClass('temp_p');
         temp_p.style('background: rgb(' + random(0, 230) + ',' + random(0, 230) + ',' + random(0, 230) + ');left:' + my_x[i] + 'px;top:' + my_y[i] + 'px;');
         //temp_p.position(my_x, my_y);
+        setTimeout(function() {
+          temp_p.addClass('temp_p_transition')
+        }, 500);
+
+        setTimeout(function() {
+          temp_p.addClass('show_temp_p')
+        }, 700);
+
       }
     }
 
