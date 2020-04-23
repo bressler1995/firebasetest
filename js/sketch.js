@@ -88,11 +88,11 @@ function draw() {
         //temp_p.position(my_x, my_y);
         setTimeout(function() {
           temp_p.addClass('temp_p_transition')
-        }, 500);
+        }, 300);
 
         setTimeout(function() {
           temp_p.addClass('show_temp_p')
-        }, 700);
+        }, 500);
 
       }
     }
