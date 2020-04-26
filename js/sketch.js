@@ -56,7 +56,7 @@ function setup() {
         createNode(folderName, fbCount, 
           {
             text: myinput.value(),
-            timestamp: String(mydate.getMonth()) + '/' + String(mydate.getDay()) + '/' + String(mydate.getFullYear()),
+            timestamp: String(mydate.getMonth() + 1) + '/' + String(mydate.getDate()) + '/' + String(mydate.getFullYear()),
           }
         );
         myinput.value('');
