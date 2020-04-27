@@ -197,6 +197,7 @@ canvas {
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+  z-index: 4;
 }
 
 .close_opt:hover {
