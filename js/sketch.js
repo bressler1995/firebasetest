@@ -6,7 +6,7 @@ let fbDataArray; // firebase data values converted to an array
 let fbCount = 0;
 let database; // reference to our firebase database
 let folderName = "messages"; // name of folder you create in db
-let myinput, mybutton, my_x = [], my_y = [], drawn = [];
+let myinput, mybutton, chat_opt, close_opt, secret_win, my_x = [], my_y = [], drawn = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -45,8 +45,12 @@ function setup() {
   // 2. Click on project
   // 3. On project home page click on name of app under project name (in large font)
   // 4. Click the gear icon --> it's in there!
+  secret_win = select("#secret_win");
   myinput = select('#myinput');
   mybutton = select('#mybutton');
+  chat_opt = select("#chat_opt");
+  close_opt = select("#close_opt");
+
   mybutton.mousePressed(
     function() {
 
@@ -66,6 +70,11 @@ function setup() {
       
     }
   );
+
+  chat_opt.mousePressed(toggle_chat);
+  close_opt.mousePressed(toggle_chat);
+
+  setTimeout(toggle_chat, 1000);
   
 }
 
@@ -102,4 +111,11 @@ function draw() {
 
 function windowResize() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function toggle_chat() {
+  secret_win.toggleClass("hide_secret_win");
+  setTimeout(function() {
+    chat_opt.toggleClass("hide_chat_opt");
+  }, 400);
 }
